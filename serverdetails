@@ -1,0 +1,45 @@
+pipeline{
+    agent any
+    stages{
+        stage('serverdetails'){
+            steps{
+             sh '''  
+             echo "SERVER DETAILS"
+             cat /etc/os-release
+              '''
+            }
+        }
+        stage('CPUdetails'){
+            steps{
+             sh '''
+               echo "CPUdetails DETAILS"
+               lscpu
+                '''
+            }
+        }
+        stage('RAM details'){
+            steps{
+             sh  '''
+             echo "RAM DETAILS"
+             cat /proc/meminfo
+             '''
+            }
+        }
+        stage('Diskdetails'){
+            steps{
+             sh '''
+               echo "disk DETAILS"
+               lsblk
+               '''
+            }
+        }
+        stage('network details'){
+            steps{
+                sh '''
+                echo "network DETAILS"
+                hostname -I 
+                '''
+            }
+        }
+    }
+}
