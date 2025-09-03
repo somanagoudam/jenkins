@@ -33,7 +33,7 @@ pipeline{
                '''
             }
         }
-        stage('WEB details'){
+        stage('Network details'){
             steps{
                 sh '''
                 echo "web DETAILS"
