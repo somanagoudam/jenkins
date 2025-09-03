@@ -33,10 +33,11 @@ pipeline{
                '''
             }
         }
-        stage('network details'){
+        stage('WEB details'){
             steps{
                 sh '''
                 echo "network DETAILS"
+                echo "hi"
                 hostname -I 
                 '''
             }
